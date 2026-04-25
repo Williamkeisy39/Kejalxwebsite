@@ -33,7 +33,7 @@ export default async function AdminProjectVideosPage() {
           <h1 className="text-2xl font-bold text-slate-900">Project Videos</h1>
           <p className="text-sm text-slate-500">Manage your YouTube project showcases</p>
         </div>
-        <Button asChild className="rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white">
+        <Button asChild className="rounded-lg bg-[#e7680d] hover:bg-black text-white">
           <Link href="/admin/project-videos/new"><Plus size={16} className="mr-2" />Add Video</Link>
         </Button>
       </div>
@@ -57,10 +57,10 @@ export default async function AdminProjectVideosPage() {
                   <tr key={video.id} className="border-b border-slate-100 hover:bg-slate-50 transition align-top">
                     <td className="px-4 py-3 font-medium text-slate-900">{video.title}</td>
                     <td className="px-4 py-3">
-                      <a href={video.thumbnailUrl} target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline text-xs">View</a>
+                      <a href={video.thumbnailUrl} target="_blank" rel="noreferrer" className="text-[#e7680d] hover:underline text-xs">View</a>
                     </td>
                     <td className="px-4 py-3">
-                      <a href={video.youtubeUrl} target="_blank" rel="noreferrer" className="text-emerald-600 hover:underline text-xs">Open</a>
+                      <a href={video.youtubeUrl} target="_blank" rel="noreferrer" className="text-[#e7680d] hover:underline text-xs">Open</a>
                     </td>
                     <td className="px-4 py-3 text-slate-600">{video.sortOrder}</td>
                     <td className="px-4 py-3">

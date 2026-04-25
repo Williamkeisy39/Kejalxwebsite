@@ -124,7 +124,7 @@ export default async function VideosPage({ searchParams }: VideosPageProps) {
                 href={safePage < totalPages ? `/videos?page=${safePage + 1}` : `/videos?page=${safePage}`}
                 className={`inline-flex rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] transition ${
                   safePage < totalPages
-                    ? 'bg-[#e7680d] text-white hover:bg-[#114b2d]'
+                    ? 'bg-[#e7680d] text-white hover:bg-black'
                     : 'pointer-events-none bg-[#e7680d]/35 text-white/70'
                 }`}
               >
@@ -150,7 +150,7 @@ export default async function VideosPage({ searchParams }: VideosPageProps) {
           {isViewAll ? (
             <Link
               href="/videos"
-              className="inline-flex rounded-full bg-[#e7680d] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[#114b2d]"
+              className="inline-flex rounded-full bg-[#e7680d] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-black"
             >
               Back to Paged View
             </Link>

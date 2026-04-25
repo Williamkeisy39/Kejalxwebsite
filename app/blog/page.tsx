@@ -63,7 +63,7 @@ export default async function BlogPage() {
                 </p>
                 <h3 className="text-lg font-semibold text-ink-950">{post.title}</h3>
                 <p className="text-sm text-ink-600 line-clamp-3">{post.excerpt}</p>
-                <span className="mt-auto text-sm font-semibold text-emerald-700">Read More →</span>
+                <span className="mt-auto text-sm font-semibold text-[#e7680d]">Read More →</span>
               </div>
             </Link>
           ))}

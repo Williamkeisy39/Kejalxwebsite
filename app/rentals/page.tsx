@@ -73,7 +73,7 @@ export default async function RentalsPage({ searchParams }: RentalsPageProps) {
             />
             <button
               type="submit"
-              className="rounded-xl bg-emerald-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-emerald-700"
+              className="rounded-xl bg-[#e7680d] px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-black"
             >
               Search
             </button>
@@ -102,7 +102,7 @@ export default async function RentalsPage({ searchParams }: RentalsPageProps) {
                     sizes="(min-width: 1280px) 400px, 100vw"
                   />
                   <div className="absolute left-3 top-3">
-                    <span className="rounded-full bg-emerald-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow">
+                    <span className="rounded-full bg-[#e7680d] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow">
                       For Rent
                     </span>
                   </div>
@@ -110,11 +110,11 @@ export default async function RentalsPage({ searchParams }: RentalsPageProps) {
                 <div className="flex flex-1 flex-col gap-4 p-6">
                   <div>
                     <div className="flex items-center gap-1.5 text-xs text-ink-500">
-                      <MapPin size={12} className="text-emerald-600" />
+                      <MapPin size={12} className="text-[#e7680d]" />
                       <span className="uppercase tracking-[0.15em]">{rental.location}</span>
                     </div>
                     <h3 className="mt-1.5 text-lg font-semibold text-ink-950">{rental.title}</h3>
-                    <p className="mt-1 text-lg font-bold text-emerald-700">
+                    <p className="mt-1 text-lg font-bold text-ink-900">
                       {formatCurrency(rental.rentPrice, rental.currency)}{' '}
                       <span className="text-sm font-normal text-ink-500">{rental.rentPeriod}</span>
                     </p>

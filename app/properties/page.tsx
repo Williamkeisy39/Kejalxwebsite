@@ -196,7 +196,7 @@ export default async function PropertiesPage({ searchParams }: PropertiesPagePro
             />
             <button
               type="submit"
-              className="sm:col-span-2 lg:col-span-4 rounded-xl bg-emerald-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-emerald-700"
+              className="sm:col-span-2 lg:col-span-4 rounded-xl bg-[#e7680d] px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-black"
             >
               Apply Filters
             </button>

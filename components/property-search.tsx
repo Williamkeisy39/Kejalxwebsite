@@ -34,7 +34,7 @@ export default function PropertySearch() {
       </label>
       <button
         type="submit"
-        className="mt-auto rounded-2xl bg-[#e7680d] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5 hover:bg-[#114b2d]"
+        className="mt-auto rounded-2xl bg-[#e7680d] px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5 hover:bg-black"
       >
         Search
       </button>

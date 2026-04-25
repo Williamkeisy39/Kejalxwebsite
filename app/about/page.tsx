@@ -98,7 +98,7 @@ export default async function AboutPage() {
           <div className="relative px-6 py-10 text-white sm:px-10 lg:px-14 lg:py-14">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(231,104,13,0.18),transparent_55%)]" />
             <div className="scroll-reveal-right scroll-delay-1 relative z-10 max-w-3xl">
-              <p className="text-xs uppercase tracking-[0.4em] text-emerald-100/85">What Is Kejalux.com?</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-white/85">What Is Kejalux.com?</p>
               <h1 className="mt-4 text-3xl leading-tight text-white sm:text-4xl">The smarter way to find, list, and close property in Kenya.</h1>
               <p className="mt-6 text-base leading-8 text-white/85 sm:text-lg">
                 Kejalux.com is an online real estate marketplace designed to simplify how Kenyans buy, sell, and rent property.

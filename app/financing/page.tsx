@@ -71,13 +71,13 @@ export default function FinancingPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/90">
-                    <Icon size={22} className="text-emerald-700" />
+                    <Icon size={22} className="text-ink-900" />
                   </div>
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-6">
                   <h3 className="text-xl font-semibold text-ink-950">{tool.title}</h3>
                   <p className="text-sm text-ink-600 leading-relaxed">{tool.description}</p>
-                  <div className="mt-auto flex items-center gap-2 text-sm font-medium text-emerald-700">
+                  <div className="mt-auto flex items-center gap-2 text-sm font-medium text-ink-900">
                     Use Calculator <MoveRight size={16} className="transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>

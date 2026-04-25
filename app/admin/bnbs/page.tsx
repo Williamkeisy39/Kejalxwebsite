@@ -33,7 +33,7 @@ export default async function AdminBnbsPage() {
           <h1 className="text-2xl font-bold text-slate-900">Bnbs</h1>
           <p className="text-sm text-slate-500">Manage short-stay listings</p>
         </div>
-        <Button asChild className="rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white">
+        <Button asChild className="rounded-lg bg-[#e7680d] hover:bg-black text-white">
           <Link href="/admin/bnbs/new"><Plus size={16} className="mr-2" />Add Bnb</Link>
         </Button>
       </div>

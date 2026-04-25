@@ -64,7 +64,7 @@ export default function PrivacyPage() {
         <p>We may update this Privacy Policy from time to time. The updated version will be posted on this page with the revised effective date.</p>
 
         <h2 className="text-lg font-semibold text-ink-900">10. Contact</h2>
-        <p>For privacy-related inquiries, contact us at <a href="mailto:info@kejalux.com" className="text-emerald-700 hover:underline">info@kejalux.com</a> or call +254 769 041607.</p>
+        <p>For privacy-related inquiries, contact us at <a href="mailto:info@kejalux.com" className="text-[#e7680d] hover:underline">info@kejalux.com</a> or call +254 769 041607.</p>
       </div>
       </div>
       </div>

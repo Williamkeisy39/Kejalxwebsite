@@ -43,7 +43,7 @@ export default async function AdminDashboardPage() {
     { label: 'Properties', value: total, icon: Building2, href: '/admin', color: 'text-blue-600 bg-blue-50' },
     { label: 'Rentals', value: rentalsCount, icon: Key, href: '/admin/rentals', color: 'text-purple-600 bg-purple-50' },
     { label: 'Videos', value: videosCount, icon: Video, href: '/admin/project-videos', color: 'text-pink-600 bg-pink-50' },
-    { label: 'Blogs', value: blogsCount, icon: FileText, href: '/admin/blogs', color: 'text-emerald-600 bg-emerald-50' },
+    { label: 'Blogs', value: blogsCount, icon: FileText, href: '/admin/blogs', color: 'text-gray-600 bg-gray-50' },
     { label: 'Sell Requests', value: sellRequestsCount, icon: MessageSquare, href: '/admin/sell-requests', color: 'text-orange-600 bg-orange-50' },
     { label: 'Messages', value: contactMessagesCount, icon: Mail, href: '/admin/contact-messages', color: 'text-cyan-600 bg-cyan-50' },
   ];
@@ -55,7 +55,7 @@ export default async function AdminDashboardPage() {
           <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
           <p className="text-sm text-slate-500">Overview of your listings and activity</p>
         </div>
-        <Button asChild className="rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white">
+        <Button asChild className="rounded-lg bg-[#e7680d] hover:bg-black text-white">
           <Link href="/admin/properties/new"><Plus size={16} className="mr-2" />Add Property</Link>
         </Button>
       </div>
@@ -77,7 +77,7 @@ export default async function AdminDashboardPage() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
-        <Card><CardContent className="flex items-center gap-3 p-5"><TrendingUp size={18} className="text-emerald-600" /><div><p className="text-lg font-bold text-slate-900">{available}</p><p className="text-xs text-slate-500">Available</p></div></CardContent></Card>
+        <Card><CardContent className="flex items-center gap-3 p-5"><TrendingUp size={18} className="text-[#e7680d]" /><div><p className="text-lg font-bold text-slate-900">{available}</p><p className="text-xs text-slate-500">Available</p></div></CardContent></Card>
         <Card><CardContent className="flex items-center gap-3 p-5"><TrendingUp size={18} className="text-amber-600" /><div><p className="text-lg font-bold text-slate-900">{featured}</p><p className="text-xs text-slate-500">Featured</p></div></CardContent></Card>
         <Card><CardContent className="flex items-center gap-3 p-5"><TrendingUp size={18} className="text-red-600" /><div><p className="text-lg font-bold text-slate-900">{sold}</p><p className="text-xs text-slate-500">Sold</p></div></CardContent></Card>
       </div>

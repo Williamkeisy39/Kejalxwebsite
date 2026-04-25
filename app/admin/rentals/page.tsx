@@ -35,7 +35,7 @@ export default async function AdminRentalsPage() {
           <h1 className="text-2xl font-bold text-slate-900">Rentals</h1>
           <p className="text-sm text-slate-500">Manage rental property listings</p>
         </div>
-        <Button asChild className="rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white">
+        <Button asChild className="rounded-lg bg-[#e7680d] hover:bg-black text-white">
           <Link href="/admin/rentals/new"><Plus size={16} className="mr-2" />Add Rental</Link>
         </Button>
       </div>

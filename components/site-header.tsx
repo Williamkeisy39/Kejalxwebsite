@@ -6,16 +6,10 @@ import { usePathname } from 'next/navigation';
 import { ChevronDown, ChevronRight, Menu, Phone, X } from 'lucide-react';
 import * as React from 'react';
 
-const nav = [
-  { href: '/financing', label: 'Financing' },
-  { href: '/contact', label: 'Contact' }
-];
-
-const realEstateSubMenu = [
+const propertiesSubMenu = [
   { href: '/properties', label: 'Buy' },
   { href: '/sell', label: 'Sell' },
-  { href: '/rentals', label: 'Rentals' },
-  { href: '/bnbs', label: 'Luxury Bnbs' }
+  { href: '/rentals', label: 'Rent' }
 ];
 
 const propertyLocations = [
@@ -70,7 +64,9 @@ const aboutSubMenu = [
   { href: '/about', label: 'About Us' },
   { href: '/videos', label: 'Videos' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/blog', label: 'Blog' }
+  { href: '/blog', label: 'Blog' },
+  { href: '/financing', label: 'Financing' },
+  { href: '/contact', label: 'Contact' }
 ];
 
 export default function SiteHeader() {
@@ -232,8 +228,17 @@ export default function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-6">
-        <Link href="/" className="inline-flex shrink-0 items-center rounded-md border border-white/20 bg-black/28 px-2 py-1.5 backdrop-blur-sm sm:px-2.5">
-          <Image src="/Kejalux.svg" alt="Kejalux.com logo" width={190} height={60} className="h-9 w-auto sm:h-11 md:h-12" priority />
+        <Link href="/" className={`inline-flex shrink-0 items-center rounded-md px-2 py-1.5 sm:px-2.5 transition-all duration-300 ${
+          !scrolled && hasHero ? 'border border-white/20 bg-black/28 backdrop-blur-sm' : ''
+        }`}>
+          <Image
+            src={!scrolled && hasHero ? '/kej.png' : '/kejlogo.png'}
+            alt="Kejalux.com logo"
+            width={190}
+            height={60}
+            className="h-9 w-auto sm:h-11 md:h-12"
+            priority
+          />
         </Link>
         <nav className="hidden gap-7 lg:gap-10 md:flex">
           <Link
@@ -243,6 +248,7 @@ export default function SiteHeader() {
             Home
           </Link>
 
+          {/* Properties dropdown (Buy / Sell / Rent) */}
           <div
             className="group relative"
             onMouseEnter={openPropertiesMenu}
@@ -258,100 +264,32 @@ export default function SiteHeader() {
               <ChevronDown size={14} className="opacity-90" aria-hidden />
             </Link>
             <div
-              className={`absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-6 shadow-xl transition duration-200 ${
+              className={`absolute left-1/2 top-full z-50 mt-3 w-48 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-3 shadow-xl transition duration-200 ${
                 isPropertiesOpen ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'
               }`}
-              style={{ width: 'max-content', minWidth: '680px' }}
             >
-              <div className="grid grid-cols-5 gap-8">
-                {/* Location */}
-                <div>
-                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-emerald-700">Location</h4>
-                  <ul className="space-y-1.5">
-                    {propertyLocations.map((loc) => (
-                      <li key={loc}>
-                        <Link
-                          href={`/properties?location=${encodeURIComponent(loc)}`}
-                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-emerald-600"
-                        >
-                          {loc}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Use */}
-                <div>
-                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-emerald-700">Use</h4>
-                  <ul className="space-y-1.5">
-                    {propertyUse.map((item) => (
-                      <li key={item.label}>
-                        <Link
-                          href={`/properties?category=${encodeURIComponent(item.query)}`}
-                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-emerald-600"
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Style */}
-                <div>
-                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-emerald-700">Style</h4>
-                  <ul className="space-y-1.5">
-                    {propertyStyle.map((item) => (
-                      <li key={item.label}>
-                        <Link
-                          href={`/properties?category=${encodeURIComponent(item.query)}`}
-                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-emerald-600"
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Budget */}
-                <div>
-                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-emerald-700">Budget</h4>
-                  <ul className="space-y-1.5">
-                    {propertyBudget.map((item) => (
-                      <li key={item.label}>
-                        <Link
-                          href={`/properties?${item.min ? `minPrice=${item.min}` : ''}${item.min && item.max ? '&' : ''}${item.max ? `maxPrice=${item.max}` : ''}`}
-                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-emerald-600"
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Type */}
-                <div>
-                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-emerald-700">Type</h4>
-                  <ul className="space-y-1.5">
-                    {propertyType.map((item) => (
-                      <li key={item.label}>
-                        <Link
-                          href={`/properties?category=${encodeURIComponent(item.query)}`}
-                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-emerald-600"
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              {propertiesSubMenu.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-gray-600 transition hover:bg-gray-50 hover:text-[#e7680d]"
+                >
+                  <span>{item.label}</span>
+                  <ChevronRight size={13} className="text-gray-400" aria-hidden />
+                </Link>
+              ))}
             </div>
           </div>
 
+          {/* Bnbs standalone */}
+          <Link
+            href="/bnbs"
+            className="relative text-[13px] font-bold uppercase tracking-[0.03em] text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-0.5 hover:text-white/85 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-white/90 after:transition-transform after:duration-300 hover:after:scale-x-100"
+          >
+            Bnbs
+          </Link>
+
+          {/* Real Estate mega-menu (location / filters) */}
           <div
             className="group relative"
             onMouseEnter={openRealEstateMenu}
@@ -366,23 +304,92 @@ export default function SiteHeader() {
               <ChevronDown size={14} className="opacity-90" aria-hidden />
             </button>
             <div
-              className={`absolute left-1/2 top-full z-50 mt-3 w-52 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-3 shadow-xl transition duration-200 ${
+              className={`absolute left-1/2 top-full z-50 mt-3 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-6 shadow-xl transition duration-200 ${
                 isRealEstateOpen ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none'
               }`}
+              style={{ width: 'max-content', minWidth: '680px' }}
             >
-              {realEstateSubMenu.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-gray-600 transition hover:bg-gray-50 hover:text-emerald-600"
-                >
-                  <span>{item.label}</span>
-                  <ChevronRight size={13} className="text-gray-400" aria-hidden />
-                </Link>
-              ))}
+              <div className="grid grid-cols-5 gap-8">
+                <div>
+                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-black">Location</h4>
+                  <ul className="space-y-1.5">
+                    {propertyLocations.map((loc) => (
+                      <li key={loc}>
+                        <Link
+                          href={`/properties?location=${encodeURIComponent(loc)}`}
+                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-[#e7680d]"
+                        >
+                          {loc}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-black">Use</h4>
+                  <ul className="space-y-1.5">
+                    {propertyUse.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          href={`/properties?category=${encodeURIComponent(item.query)}`}
+                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-[#e7680d]"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-black">Style</h4>
+                  <ul className="space-y-1.5">
+                    {propertyStyle.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          href={`/properties?category=${encodeURIComponent(item.query)}`}
+                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-[#e7680d]"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-black">Budget</h4>
+                  <ul className="space-y-1.5">
+                    {propertyBudget.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          href={`/properties?${item.min ? `minPrice=${item.min}` : ''}${item.min && item.max ? '&' : ''}${item.max ? `maxPrice=${item.max}` : ''}`}
+                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-[#e7680d]"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-black">Type</h4>
+                  <ul className="space-y-1.5">
+                    {propertyType.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          href={`/properties?category=${encodeURIComponent(item.query)}`}
+                          className="block text-[13px] uppercase tracking-wide text-gray-600 transition hover:text-[#e7680d]"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
+          {/* About dropdown */}
           <div
             className="group relative"
             onMouseEnter={openQuickMenu}
@@ -406,7 +413,7 @@ export default function SiteHeader() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-gray-600 transition hover:bg-gray-50 hover:text-emerald-600"
+                  className="flex items-center justify-between rounded-lg px-3 py-2.5 text-[13px] font-semibold uppercase tracking-[0.08em] text-gray-600 transition hover:bg-gray-50 hover:text-[#e7680d]"
                 >
                   <span>{item.label}</span>
                   <ChevronRight size={13} className="text-gray-400" aria-hidden />
@@ -414,16 +421,6 @@ export default function SiteHeader() {
               ))}
             </div>
           </div>
-
-          {nav.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="relative text-[13px] font-bold uppercase tracking-[0.03em] text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-0.5 hover:text-white/85 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-white/90 after:transition-transform after:duration-300 hover:after:scale-x-100"
-            >
-              {item.label}
-            </Link>
-          ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
           <Link
@@ -455,6 +452,7 @@ export default function SiteHeader() {
               <ChevronRight size={14} aria-hidden />
             </Link>
 
+            {/* Properties (Buy / Sell / Rent) */}
             <button
               type="button"
               className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-white/95 transition hover:bg-white/10"
@@ -466,17 +464,52 @@ export default function SiteHeader() {
             </button>
 
             {isMobilePropertiesOpen ? (
+              <div className="mx-1 space-y-1 rounded-xl border border-white/15 bg-black/25 p-2">
+                {propertiesSubMenu.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="flex items-center justify-between rounded-lg px-3 py-2 text-xs uppercase tracking-[0.12em] text-white/90 transition hover:bg-white/10"
+                  >
+                    <span>{item.label}</span>
+                    <ChevronRight size={13} aria-hidden />
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+
+            {/* Bnbs standalone */}
+            <Link
+              href="/bnbs"
+              className="flex items-center justify-between rounded-xl px-3 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white/95 transition hover:bg-white/10"
+            >
+              <span>Bnbs</span>
+              <ChevronRight size={14} aria-hidden />
+            </Link>
+
+            {/* Real Estate (location / filters) */}
+            <button
+              type="button"
+              className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-white/95 transition hover:bg-white/10"
+              onClick={() => setIsMobileRealEstateOpen((open) => !open)}
+              aria-expanded={isMobileRealEstateOpen}
+            >
+              <span>Real Estate</span>
+              <ChevronDown size={15} className={`transition ${isMobileRealEstateOpen ? 'rotate-180' : ''}`} aria-hidden />
+            </button>
+
+            {isMobileRealEstateOpen ? (
               <div className="mx-1 space-y-3 rounded-xl border border-white/15 bg-black/25 p-3">
                 <Link
                   href="/properties"
-                  className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-emerald-400 transition hover:bg-white/10"
+                  className="flex items-center justify-between rounded-lg px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-[#e7680d] transition hover:bg-white/10"
                 >
                   <span>All Properties</span>
                   <ChevronRight size={13} aria-hidden />
                 </Link>
 
                 <div>
-                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-emerald-400/80">Location</p>
+                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-[#e7680d]/80">Location</p>
                   {propertyLocations.map((loc) => (
                     <Link
                       key={loc}
@@ -490,7 +523,7 @@ export default function SiteHeader() {
                 </div>
 
                 <div>
-                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-emerald-400/80">Use</p>
+                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-[#e7680d]/80">Use</p>
                   {propertyUse.map((item) => (
                     <Link
                       key={item.label}
@@ -504,7 +537,7 @@ export default function SiteHeader() {
                 </div>
 
                 <div>
-                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-emerald-400/80">Style</p>
+                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-[#e7680d]/80">Style</p>
                   {propertyStyle.map((item) => (
                     <Link
                       key={item.label}
@@ -518,7 +551,7 @@ export default function SiteHeader() {
                 </div>
 
                 <div>
-                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-emerald-400/80">Budget</p>
+                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-[#e7680d]/80">Budget</p>
                   {propertyBudget.map((item) => (
                     <Link
                       key={item.label}
@@ -532,7 +565,7 @@ export default function SiteHeader() {
                 </div>
 
                 <div>
-                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-emerald-400/80">Type</p>
+                  <p className="px-3 text-[10px] font-bold uppercase tracking-[0.15em] text-[#e7680d]/80">Type</p>
                   {propertyType.map((item) => (
                     <Link
                       key={item.label}
@@ -547,31 +580,7 @@ export default function SiteHeader() {
               </div>
             ) : null}
 
-            <button
-              type="button"
-              className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-white/95 transition hover:bg-white/10"
-              onClick={() => setIsMobileRealEstateOpen((open) => !open)}
-              aria-expanded={isMobileRealEstateOpen}
-            >
-              <span>Real Estate</span>
-              <ChevronDown size={15} className={`transition ${isMobileRealEstateOpen ? 'rotate-180' : ''}`} aria-hidden />
-            </button>
-
-            {isMobileRealEstateOpen ? (
-              <div className="mx-1 space-y-1 rounded-xl border border-white/15 bg-black/25 p-2">
-                {realEstateSubMenu.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="flex items-center justify-between rounded-lg px-3 py-2 text-xs uppercase tracking-[0.12em] text-white/90 transition hover:bg-white/10"
-                  >
-                    <span>{item.label}</span>
-                    <ChevronRight size={13} aria-hidden />
-                  </Link>
-                ))}
-              </div>
-            ) : null}
-
+            {/* About (About Us, Videos, Gallery, Blog, Financing, Contact) */}
             <button
               type="button"
               className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-xs font-bold uppercase tracking-[0.16em] text-white/95 transition hover:bg-white/10"
@@ -596,17 +605,6 @@ export default function SiteHeader() {
                 ))}
               </div>
             ) : null}
-
-            {nav.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="flex items-center justify-between rounded-xl px-3 py-3 text-xs font-bold uppercase tracking-[0.16em] text-white/95 transition hover:bg-white/10"
-              >
-                <span>{item.label}</span>
-                <ChevronRight size={14} aria-hidden />
-              </Link>
-            ))}
 
             <Link
               href="tel:+254769041607"

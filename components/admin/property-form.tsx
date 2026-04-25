@@ -118,7 +118,7 @@ export default function PropertyForm({ property, action, submitLabel }: Property
         </CardContent>
       </Card>
 
-      <Button type="submit" className="rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white px-8">
+      <Button type="submit" className="rounded-lg bg-[#e7680d] hover:bg-black text-white px-8">
         {submitLabel}
       </Button>
     </form>

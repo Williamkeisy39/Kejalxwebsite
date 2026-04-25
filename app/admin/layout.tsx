@@ -33,7 +33,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
       {token && (
         <aside className="fixed inset-y-0 left-0 z-40 flex w-60 flex-col border-r border-slate-200 bg-slate-900">
           <div className="flex h-16 items-center gap-2 border-b border-slate-700 px-5">
-            <Building2 size={22} className="text-emerald-400" />
+            <Building2 size={22} className="text-[#e7680d]" />
             <span className="text-sm font-bold tracking-wide text-white">KEJALUX ADMIN</span>
           </div>
 
@@ -83,7 +83,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
               <Link
                 href="/"
                 target="_blank"
-                className="text-xs text-slate-500 hover:text-emerald-600 transition"
+                className="text-xs text-slate-500 hover:text-[#e7680d] transition"
               >
                 View Site &rarr;
               </Link>

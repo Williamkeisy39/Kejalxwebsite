@@ -100,7 +100,7 @@ export default function AffordabilityCalculatorPage() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div className="card-surface space-y-6 p-8">
             <div className="flex items-center gap-3">
-              <PiggyBank size={22} className="text-emerald-700" />
+              <PiggyBank size={22} className="text-ink-900" />
               <h2 className="text-2xl text-ink-950">Your Financial Profile</h2>
             </div>
 
@@ -175,9 +175,9 @@ export default function AffordabilityCalculatorPage() {
             <div className="card-surface space-y-6 p-8">
               <h3 className="text-xl text-ink-950">What You Can Afford</h3>
               <div className="space-y-4">
-                <div className="rounded-2xl bg-emerald-50 p-4 text-center">
-                  <p className="text-xs uppercase tracking-[0.2em] text-emerald-700">Max Property Price</p>
-                  <p className="mt-1 text-3xl font-semibold text-emerald-800">
+                <div className="rounded-2xl bg-gray-50 p-4 text-center">
+                  <p className="text-xs uppercase tracking-[0.2em] text-ink-900">Max Property Price</p>
+                  <p className="mt-1 text-3xl font-semibold text-ink-950">
                     KES {result.maxProperty.toLocaleString('en-KE', { maximumFractionDigits: 0 })}
                   </p>
                 </div>
@@ -201,7 +201,7 @@ export default function AffordabilityCalculatorPage() {
               </p>
               <Link
                 href="/contact"
-                className="block rounded-full bg-[#e7680d] px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5 hover:bg-[#114b2d]"
+                className="block rounded-full bg-[#e7680d] px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:-translate-y-0.5 hover:bg-black"
               >
                 Contact Us
               </Link>
@@ -211,7 +211,7 @@ export default function AffordabilityCalculatorPage() {
 
         {/* FAQs */}
         <div className="mt-16">
-          <p className="text-xs uppercase tracking-[0.4em] text-emerald-700">Common Questions</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-ink-900">Common Questions</p>
           <h2 className="mt-3 text-3xl text-ink-950">Affordability FAQs</h2>
           <div className="mt-8 space-y-3">
             {faqs.map((faq, i) => (

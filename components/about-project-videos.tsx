@@ -107,7 +107,7 @@ export default function AboutProjectVideos({ videos }: AboutProjectVideosProps) 
                 href={video.youtubeUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-emerald-800 transition hover:text-emerald-700"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-ink-900 transition hover:text-[#e7680d]"
               >
                 Watch on YouTube <span aria-hidden>↗</span>
               </a>

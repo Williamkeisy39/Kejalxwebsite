@@ -41,8 +41,8 @@ export default function ContactPage() {
     return (
       <div className="mx-auto max-w-2xl px-6 pb-20 pt-40 text-center">
         <div className="card-surface p-12">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
-            <Send size={28} className="text-emerald-700" />
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+            <Send size={28} className="text-ink-900" />
           </div>
           <h1 className="mt-6 text-3xl text-ink-950">Message Sent!</h1>
           <p className="mt-3 text-ink-600">
@@ -95,7 +95,7 @@ export default function ContactPage() {
 
           {/* Contact Info */}
           <div className="scroll-reveal">
-            <p className="text-xs uppercase tracking-[0.4em] text-emerald-700">Reach Us</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-ink-900">Reach Us</p>
             <h2 className="mt-3 text-3xl text-ink-950">We&apos;d love to hear from you</h2>
             <p className="mt-4 text-ink-600 leading-7">
               Whether you need help with a listing, want to report an issue, or have a partnership inquiry,
@@ -104,32 +104,32 @@ export default function ContactPage() {
 
             <div className="mt-10 space-y-6">
               <div className="scroll-reveal-soft flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50">
-                  <Phone size={18} className="text-emerald-700" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gray-50">
+                  <Phone size={18} className="text-ink-900" />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-ink-500">Phone</p>
-                  <a href="tel:+254769041607" className="mt-1 block text-ink-900 hover:text-emerald-700 transition">
+                  <a href="tel:+254769041607" className="mt-1 block text-ink-900 hover:text-ink-900 transition">
                     +254 769 041607
                   </a>
                 </div>
               </div>
 
               <div className="scroll-reveal-soft scroll-delay-1 flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50">
-                  <Mail size={18} className="text-emerald-700" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gray-50">
+                  <Mail size={18} className="text-ink-900" />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-ink-500">Email</p>
-                  <a href="mailto:info@kejalux.com" className="mt-1 block text-ink-900 hover:text-emerald-700 transition">
+                  <a href="mailto:info@kejalux.com" className="mt-1 block text-ink-900 hover:text-ink-900 transition">
                     info@kejalux.com
                   </a>
                 </div>
               </div>
 
               <div className="scroll-reveal-soft scroll-delay-2 flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50">
-                  <MapPin size={18} className="text-emerald-700" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gray-50">
+                  <MapPin size={18} className="text-ink-900" />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-ink-500">Location</p>
@@ -138,8 +138,8 @@ export default function ContactPage() {
               </div>
 
               <div className="scroll-reveal-soft scroll-delay-3 flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-50">
-                  <Clock size={18} className="text-emerald-700" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gray-50">
+                  <Clock size={18} className="text-ink-900" />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-ink-500">Working Hours</p>
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 href={`https://wa.me/254769041607?text=${encodeURIComponent('Hello Kejalux.com, I would like to inquire about your properties.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white shadow-lg shadow-emerald-900/15 transition hover:-translate-y-0.5 hover:bg-[#20bd5a]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white shadow-lg shadow-black/15 transition hover:-translate-y-0.5 hover:bg-[#20bd5a]"
               >
                 <MessageSquare size={16} />
                 Chat on WhatsApp
@@ -167,7 +167,7 @@ export default function ContactPage() {
           <form onSubmit={handleSubmit} className="scroll-reveal-right card-surface space-y-6 p-8">
             <div>
               <h3 className="flex items-center gap-2 text-lg font-semibold text-ink-950">
-                <Send size={18} className="text-emerald-700" />
+                <Send size={18} className="text-ink-900" />
                 Send Us a Message
               </h3>
               <p className="mt-1 text-sm text-ink-500">Fill out the form and we&apos;ll respond within 24 hours.</p>

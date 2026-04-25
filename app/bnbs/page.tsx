@@ -68,7 +68,7 @@ export default async function BnbsPage() {
                         Featured
                       </span>
                     )}
-                    <span className="absolute right-4 top-4 rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white">
+                    <span className="absolute right-4 top-4 rounded-full bg-[#e7680d] px-3 py-1 text-xs font-semibold text-white">
                       {formatCurrency(bnb.pricePerNight, bnb.currency)}/night
                     </span>
                   </div>

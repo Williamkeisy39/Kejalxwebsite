@@ -41,8 +41,8 @@ export default function SellPage() {
     return (
       <div className="mx-auto max-w-2xl px-6 pb-20 pt-40 text-center">
         <div className="card-surface p-12">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
-            <Home size={28} className="text-emerald-700" />
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+            <Home size={28} className="text-ink-900" />
           </div>
           <h1 className="mt-6 text-3xl text-ink-950">Property Submitted!</h1>
           <p className="mt-3 text-ink-600">
@@ -95,7 +95,7 @@ export default function SellPage() {
       <form onSubmit={handleSubmit} className="scroll-reveal-soft scroll-delay-1 card-surface mt-10 space-y-6 p-8">
         <div>
           <h3 className="flex items-center gap-2 text-lg font-semibold text-ink-950">
-            <User size={18} className="text-emerald-700" />
+            <User size={18} className="text-ink-900" />
             Your Details
           </h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -118,7 +118,7 @@ export default function SellPage() {
 
         <div>
           <h3 className="flex items-center gap-2 text-lg font-semibold text-ink-950">
-            <Home size={18} className="text-emerald-700" />
+            <Home size={18} className="text-ink-900" />
             Property Details
           </h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -141,7 +141,7 @@ export default function SellPage() {
 
         <div>
           <h3 className="flex items-center gap-2 text-lg font-semibold text-ink-950">
-            <DollarSign size={18} className="text-emerald-700" />
+            <DollarSign size={18} className="text-ink-900" />
             Specifications
           </h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

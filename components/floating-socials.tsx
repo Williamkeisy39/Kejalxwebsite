@@ -67,7 +67,7 @@ export default function FloatingSocials() {
               target="_blank"
               rel="noopener noreferrer"
               title={s.label}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink-900 shadow-md transition hover:-translate-y-0.5 hover:bg-emerald-50"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink-900 shadow-md transition hover:-translate-y-0.5 hover:bg-gray-100"
             >
               {s.icon}
             </a>

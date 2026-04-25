@@ -98,7 +98,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/12 via-black/22 to-black/35" />
         <div className="relative mx-auto max-w-[96rem] px-5 pt-28 text-white sm:px-6 md:pt-24 lg:pt-28">
           <div className="max-w-3xl">
-            <p className="hero-reveal-up text-xs uppercase tracking-[0.4em] text-emerald-100/95 drop-shadow-[0_4px_14px_rgba(0,0,0,0.75)]">Kenya&apos;s Premier Real Estate Marketplace</p>
+            <p className="hero-reveal-up text-xs uppercase tracking-[0.4em] text-white/95 drop-shadow-[0_4px_14px_rgba(0,0,0,0.75)]">Kenya&apos;s Premier Real Estate Marketplace</p>
             <h1 className="hero-reveal-up hero-delay-1 mt-5 font-serif text-3xl leading-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.75)] sm:text-5xl md:text-6xl">
               <HeroTypewriter
                 texts={[
@@ -202,7 +202,7 @@ export default async function HomePage() {
           <div className="relative px-6 py-10 text-white sm:px-10 lg:px-14 lg:py-14">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(231,104,13,0.18),transparent_55%)]" />
             <div className="scroll-reveal-right scroll-delay-1 relative z-10 max-w-3xl">
-              <p className="text-xs uppercase tracking-[0.4em] text-emerald-100/85">About Kejalux.com</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-white/85">About Kejalux.com</p>
               <h2 className="mt-4 text-3xl leading-tight text-white sm:text-4xl">Kenya&apos;s smarter way to buy, sell, and rent property.</h2>
               <p className="mt-6 text-base leading-8 text-white/85 sm:text-lg">
                 Kejalux.com is an online real estate marketplace that brings together property seekers, sellers, landlords, and verified agents

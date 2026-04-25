@@ -97,7 +97,7 @@ export default async function GalleryPage({ searchParams }: GalleryPageProps) {
                     href={safePage < totalPages ? `/gallery?page=${safePage + 1}` : `/gallery?page=${safePage}`}
                     className={`inline-flex rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] transition ${
                       safePage < totalPages
-                        ? 'bg-[#e7680d] text-white hover:bg-[#114b2d]'
+                        ? 'bg-[#e7680d] text-white hover:bg-black'
                         : 'pointer-events-none bg-[#e7680d]/35 text-white/70'
                     }`}
                   >
@@ -116,7 +116,7 @@ export default async function GalleryPage({ searchParams }: GalleryPageProps) {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/properties"
-            className="inline-flex rounded-full bg-[#e7680d] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[#114b2d]"
+            className="inline-flex rounded-full bg-[#e7680d] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-black"
           >
             Browse Properties
           </Link>

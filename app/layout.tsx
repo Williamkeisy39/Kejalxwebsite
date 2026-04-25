@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'Search thousands of homes, apartments, land, and rentals across Kenya. Buy, sell, or rent property on Kejalux.com.',
   metadataBase: new URL('https://kejalux.com'),
   icons: {
-    icon: '/Kejalux.svg'
+    icon: '/kej.png'
   },
   openGraph: {
     title: 'Kejalux.com',

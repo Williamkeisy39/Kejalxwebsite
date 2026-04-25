@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="mx-auto max-w-3xl px-6 pb-16 pt-32">
       <Link
         href="/blog"
-        className="scroll-reveal inline-flex items-center gap-2 text-sm text-ink-600 transition hover:text-emerald-700"
+        className="scroll-reveal inline-flex items-center gap-2 text-sm text-ink-600 transition hover:text-[#e7680d]"
       >
         <ArrowLeft size={16} />
         Back to Blog

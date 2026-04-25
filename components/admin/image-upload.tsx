@@ -94,7 +94,7 @@ export default function ImageUpload({ name, label = 'Images', multiple = true, d
       ) : (
         <div
           onClick={() => fileRef.current?.click()}
-          className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-center transition hover:border-emerald-400 hover:bg-emerald-50/30"
+          className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-center transition hover:border-[#e7680d] hover:bg-orange-50/30"
         >
           <Upload size={28} className="text-slate-400" />
           <p className="text-sm text-slate-600">Click to browse or drag files here</p>

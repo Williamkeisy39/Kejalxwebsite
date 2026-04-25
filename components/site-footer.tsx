@@ -6,7 +6,7 @@ export default function SiteFooter() {
     <footer id="contact" className="border-t border-white/40 bg-white/70">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-ink-700 md:flex-row md:items-center md:justify-between">
         <div>
-          <Image src="/Kejalux.svg" alt="Kejalux.com" width={210} height={60} className="h-10 w-auto" />
+          <Image src="/kejlogo.png" alt="Kejalux.com" width={210} height={60} className="h-10 w-auto" />
         </div>
         <div className="flex flex-col gap-1 text-right text-ink-600">
           <a href="mailto:info@kejalux.com" className="hover:text-ink-900">
